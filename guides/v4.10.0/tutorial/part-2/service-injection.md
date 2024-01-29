@@ -4,7 +4,7 @@ As promised, we will now work on implementing the share button!
 
 <!-- TODO: make this a gif instead -->
 
-<img src="/images/tutorial/part-2/service-injection/share-button@2x.png" alt="The working share button by the end of the chapter" width="1024" height="1381">
+<img src="/images/tutorial/part-2/service-injection/share-button@2x.png" alt="The working share button by the end of the chapter" width="1024" height="1382">
 
 While adding the share button, you will learn about:
 
@@ -51,6 +51,8 @@ installing component
   create app/components/share-button.hbs
 installing component-test
   create tests/integration/components/share-button-test.js
+
+Running "lint:fix" script...
 ```
 
 Let's start with the template that was generated for this component. We already have some markup for the share button in the `<Rental::Detailed>` component we made earlier, so let's just copy that over into our new `<ShareButton>` component.
@@ -172,7 +174,7 @@ Let's put this component to use by invoking it from the `<Rental::Detailed>` com
 
 With that, we should have a working share button!
 
-<img src="/images/tutorial/part-2/service-injection/share-button@2x.png" alt="A share button that works!" width="1024" height="1381">
+<img src="/images/tutorial/part-2/service-injection/share-button@2x.png" alt="A share button that works!" width="1024" height="1382">
 
 <div class="cta">
   <div class="cta-note">
@@ -314,7 +316,7 @@ However, during tests, the router is configured to maintain the "logical" URL in
 
 ## The Router Service
 
-To fix our problem, we would need to do the same. Ember exposes this internal state through the _[router service](https://api.emberjs.com/ember/4.10.0/classes/RouterService)_, which we can _[inject](../../../services/#toc_accessing-services)_ into our component:
+To fix our problem, we would need to do the same. Ember exposes this internal state through the _[router service](https://api.emberjs.com/ember/release/classes/RouterService)_, which we can _[inject](../../../services/#toc_accessing-services)_ into our component:
 
 ```js { data-filename="app/components/share-button.js" data-diff="+1,+7,+8,-10,+11" }
 import { service } from '@ember/service';
